@@ -1,0 +1,47 @@
+.weight-list {
+	padding: 15px;
+}
+
+.weight-list .weight-item {
+	position: relative;
+	padding: 10px 15px;
+	background-color: #FFF;
+	border-radius: 8px;
+	margin-bottom: 15px;
+	display: flex;
+	transition: 0.4s;
+	padding-left: 75px;
+}
+
+.weight-list .weight-item .remove-item {
+	position: absolute;
+	width: 0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+
+	cursor: pointer;
+	display: block;
+	color: var(--light);
+	font-weight: 600;
+	background-color: var(--alert);
+	border-radius: 8px 0px 0px 8px;
+	transition: 0.2s;
+}
+
+.weight-list .weight-item:hover .remove-item {
+	width: 50px;
+}
+
+.weight-list .weight-item .desc {
+	flex: 1 1 100%;
+}
+
+.weight-list .weight-item .price,
+.weight-list .weight-item .date {
+	min-width: 125px;
+}
+.weight-list .weight-item:hover {
+	box-shadow: 0px 0px 6px rgba(0,0,0,0.1);
+}

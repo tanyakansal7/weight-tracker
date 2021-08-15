@@ -5,7 +5,7 @@ import './header.styles.scss';
 
 const Header=({currentUser})=>(
     <div className="header">
-
+   <h1 className="heading">Weight Tracker</h1>
     {
        currentUser ?
        (<div className="option" onClick={()=>auth.signOut()}>SIGN OUT</div>)

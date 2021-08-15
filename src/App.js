@@ -1,8 +1,9 @@
 import React from 'react';
-import {Switch, Route } from 'react-router-dom';
+import {Switch, Route ,Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
 import './App.css';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up-page/sign-in-and-sign-up.component';
+import WeightTrackingPage from './pages/weight-tracking-page/weight-tracking-page.component';
 import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 import {setCurrentUser} from './redux/user/user.actions';
 import Header from './components/header/header.component';
@@ -37,7 +38,9 @@ unsubscribeFromAuth=null
     <div>
        <Header/>
        <Switch>
-     <Route exact path="/" component={SignInAndSignUpPage}/>
+     {/* <Route exact path="/" component={SignInAndSignUpPage}/> */}
+     <Route path="/track" component={WeightTrackingPage}/>
+     <Route exact path='/signin' render={()=>this.props.currentUser ? (<Redirect to="/track"/>):(<SignInAndSignUpPage/>) }/>
        </Switch>
          
 
